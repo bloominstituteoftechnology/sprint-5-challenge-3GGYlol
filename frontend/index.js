@@ -46,7 +46,7 @@ async function sprintChallenge5() { // Note the async keyword, in case you wish 
 
   
 card.addEventListener('click', evt => {
-  // is the clicked card already selected? 
+
   if(card.classList.contains('selected')){
     card.classList.remove('selected')
     document.querySelector('.info').textContent = "No learner is selected"
@@ -68,8 +68,7 @@ try {
   const mentorsData = await axios.get('http://localhost:3003/api/mentors')
   const learners = learnersData.data
   const mentors = mentorsData.data
-  // console.log(learners)
-  // console.log(mentors)
+
   learners.forEach((learner, idx) => {
     console.log(learner.fullName, idx)
     const learnerCard = buildLearnerCard(learner, mentors)
@@ -82,7 +81,8 @@ try {
 
 const myFooter = document.querySelector('footer')
 myFooter.textContent = "© BLOOM INSTITUTE OF TECHNOLOGY 2023"
-  // 👆 WORK WORK ABOVE THIS LINE 👆
+ 
+// 👆 WORK WORK ABOVE THIS LINE 👆
 }
 
 // ❗ DO NOT CHANGE THE CODE  BELOW
